@@ -1,0 +1,230 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Installation de Ubuntu Desktop sur VirtualBox" duration="0">
+        <h2 is-upgraded>Introduction</h2>
+<p>Dans un premier temps nous allons mettre en place notre environnement de travail. Pour cela nous allons créer une machine virtuelle à l&#39;aide de VirtualBox. Sur cette machine nous installerons le système d&#39;exploitation Ubuntu Desktop.</p>
+<h2 is-upgraded>Tutoriel et questions</h2>
+<p>Suivez les étapes du tutoriel ci-dessous. En parallèle, noter sur une feuille vos réponses aux questions ci-dessous :</p>
+<p><a href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview" target="_blank"><code>Installation de Ubuntu sur VirtualBox</code></a></p>
+<h2 is-upgraded>Note importantes</h2>
+<p>Lors de l&#39;installation de Ubuntu veuillez choisir les paramètres suivant :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\1ee2bc1155cc6a9.png"></p>
+<h2 is-upgraded>Questions</h2>
+<p>Les réponses des questions ci-dessous se situent sur le site précédent.</p>
+<ol type="1" start="1">
+<li>Quel processeur est-il conseillé d&#39;avoir sur sa machine afin d&#39;installer Ubuntu 22.04.1 LTS ? Même question pour la taille de la RAM ?</li>
+<li>A quoi correspond l&#39;accronyme &#34;LTS&#34; dans le mot &#34;Ubuntu 22.04.1 LTS&#34; ?</li>
+<li>Que signifie l&#39;accronyme &#34;LTS&#34; en terme de sécurité et de maintenance sur cette version Ubuntu ?</li>
+</ol>
+<p>Supposons que l&#39;utilisateur place le curseur complètement à droite dans l&#39;image ci-dessous :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\47081050e0a8949.png"></p>
+<ol type="1" start="4">
+<li>Que risque-t-il de se passer lorsque la machine virtuelle sera en fonctionnement ?</li>
+<li>Quelle est la différence d&#39;allocation mémoire entre un stockage dynamiquement alloué et un stockage de taille fixe ?</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduction au serveur LAMP" duration="0">
+        <p>LAMP est une pile logicielle qui permet de mettre en place un serveur web. Grâce à cela, des utilisateurs vont pouvoir consulter des pages web de notre serveur.</p>
+<ol type="1" start="6">
+<li>🔍 A quoi correspond l&#39;acronyme &#34;LAMP&#34; ? </li>
+<li>🔍Dans cette acronyme, quel logiciel est le serveur HTTP ? Quel est le langage de programmation interprété ? Quel est le système de gestion de bases de données ? Quel est le système d&#39;exploitation ?</li>
+</ol>
+<p>L&#39;application web conçu sera déployée sur une architecture 3-Tiers. Cette architecture peut être décrite par la figure ci-dessous :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\4170bff41920ed49.png"></p>
+<h2 is-upgraded>Processus d&#39;éxécution</h2>
+<ul>
+<li>Le navigateur envoie l&#39;adresse que l&#39;utilisateur a tapée.</li>
+<li>Apache (le serveur web) cherche dans son arborescence si le fichier existe. Si c&#39;est le cas, Apache transmet ce fichier au parseur PHP ;</li>
+<li>PHP parse le fichier, c&#39;est-à-dire qu&#39;il va analyser et exécuter le code PHP qui se trouve entre les balises &lt;? PHP et ?&gt;. </li>
+<li>Si ce code contient des requêtes vers une base de données MySQL, PHP envoie la requête SQL. La base de données renvoie les informations voulues. PHP continue de parser la page, puis retourne le fichier dépourvu du code PHP au serveur web ;</li>
+<li>Le serveur web renvoie donc un fichier ne contenant plus de PHP, donc seulement du HTML au navigateur qui l&#39;interprète et l&#39;affiche.</li>
+</ul>
+<ol type="1" start="8">
+<li>D&#39;après vous pourquoi cette architecture est appelée &#34;architecrure 3-tiers&#34; ?</li>
+</ol>
+<h2 is-upgraded>Les niveaux de l&#39;architecture 3-tiers</h2>
+<h3 is-upgraded>Le Client</h3>
+<p>Dans un réseau informatique un client est l&#39;ordinateur(=logiciel) qui envoient des demandes à un serveur.</p>
+<h3 is-upgraded>Le Serveur d&#39;application</h3>
+<p>Dans un réseau informatique, un serveur est à la fois un ensemble de logiciels et l&#39;ordinateur les hébergeant. Son rôle est de répondre de manière automatique à des demandes envoyées par des clients via le réseau.</p>
+<p>Les serveurs sont d&#39;usage courant dans les entreprises, où ils sont souvent un point central et sont utilisés simultanément par de nombreux utilisateurs pour stocker, partager et échanger des informations. Le serveur d&#39;application permet ainsi au client de communiquer avec le serveur de bases de données.</p>
+<h3 is-upgraded>Le Serveur de base de données</h3>
+<ol type="1" start="9">
+<li>Donner une brève définition d&#39;un serveur de base de données</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation de Apache" duration="0">
+        <h2 is-upgraded>Installation des paquets</h2>
+<p>Dans un terminal taper la commande suivant qui permet d&#39;installer le paquet Apache2</p>
+<pre>sudo apt install apache2</pre>
+<p>Une fois les paquets installés, ouvrez un des liens suivants dans votre navigateur :</p>
+<ul>
+<li><a href="http://localhost" target="_blank"><code>http://localhost</code></a></li>
+<li><a href="http://127.0.0.1/" target="_blank"><code>http://127.0.0.1/</code></a></li>
+</ul>
+<p>Si le message « It works! » s&#39;affiche, votre serveur Lamp est correctement installé.</p>
+<p>Selon la version installée, vous pouvez aussi avoir une page intitulée « Apache2 Ubuntu Default Page ».</p>
+<h2 is-upgraded>Personnalisation du serveur</h2>
+<p>Nous allons modifier la page d&#39;accueil par défaut.</p>
+<ol type="1" start="10">
+<li>Placez vous dans le dossier /var/www, quel est le contenu de ce dossier ?</li>
+<li>Ajouter votre propre fichier &#34;index.html&#34; afin que la page d&#39;accueil ressemble à l&#39;image ci-dessous :</li>
+</ol>
+<p class="image-container"><img style="width: 601.70px" src="img\\ebba074910cec266.png"></p>
+<ol type="1" start="12">
+<li>La configuration de Apache se fait principalement dans les fichiers /etc/apache2/apache2.conf et /etc/apache2/ports.conf. Ouvrez ces fichiers, et répondez aux questions suivantes :</li>
+</ol>
+<ol type="1" start="1">
+<li>Quel utilisateur est utilisé pour lancer le serveur Apache ?</li>
+<li>Quel groupe est utilisé pour lancer le serveur ?</li>
+<li>Quels sont les ports utilisés par le serveur ?</li>
+</ol>
+<p>Pour modifier le contenu du dossier /var/www nécessite des droits que votre compte utilisateur ne possède pas. Pour remédier à ce problème, on pourrait ajouter des droits à votre compte. Au lieu de cela, nous allons activer un module de Apache, appelé userdir</p>
+<p>Vérifier que ce module est bien disponible en regardant si le dossier /etc/apache2/mods-available contient le fichier userdir.load.</p>
+<p>Le dossier /etc/apache2/mods-enabled contient des liens symboliques vers les fichiers du dossier /etc/apache2/mods-available. La présence d&#39;un tel lien signifie que le module en question est activé. Regarder si le module userdir est déjà activé.</p>
+<p>S&#39;il n&#39;est pas activé, vous devez créer vous même les liens symboliques</p>
+<ol type="1" start="13">
+<li>🔍Chercher sur internet la façon de créer un lien symbolique avec la commande ln -sv</li>
+</ol>
+<ol type="1" start="14">
+<li>Créer des liens symbolique vers les fichiers /etc/apache2/mods-available/userdir.load et userdir.conf (s&#39;il existe).</li>
+</ol>
+<p>Vous devriez avoir le message</p>
+<pre><code>‘/etc/apache2/mods-enabled/userdir.load&#39; → ‘/etc/apache2/mods-available/userdir.load&#39;
+
+‘/etc/apache2/mods-enabled/userdir.conf&#39; → ‘/etc/apache2/mods-available/userdir.conf&#39;</code></pre>
+<p>Après avoir activé un module, il faut relancer Apache en faisant la commande :</p>
+<pre><code>sudo service apache2 restart</code></pre>
+<p>Une fois le module userdir activé, chaque utilisateur peut créer son propre site Web dans le dossier ~/login/public_html (login correspond a votre login). </p>
+<p>Créez ce répertoire et mettez y un fichier index.html. </p>
+<p>Accéder à ce fichier via l&#39;url : http://localhost/~&lt;nom dutilisateur&gt;, vous devriez avoir le message d&#39;erreur ci-dessous :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\805fc2e965d1a825.png"></p>
+<ol type="1" start="15">
+<li>Que signifie cette erreur ?</li>
+<li>🔍Cherchez sur internet les commandes permettant de debugger cette situation. Une fois terminer vous devriez voir s&#39;afficher votre page index.html à la place du message d&#39;erreur.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ajout de PHP" duration="0">
+        <p>Afin de faire un site Web dynamique, on a besoin d&#39;utiliser un langage de programmation. On utilisera ce langage pour générer en autre du code HTML qui sera utilisé dans les pages envoyés aux clients. C&#39;est donc le serveur Web qui se charge d&#39;exécuter le code avant d&#39;envoyer le résultat aux clients. Nous utiliseront ici le langage PHP </p>
+<p>Taper la commande :</p>
+<pre><code>apt install libapache2-mod-php</code></pre>
+<p>Vérifier que le module php a bien été activé par défaut en consultant le contenu du dossier /etc/apache2/mods-enabled</p>
+<p>Pour tester que PHP est bien supporté, créez le chier info.php dans le répertoire /var/www/html avec le contenu suivant : </p>
+<pre><code>&lt;?php phpinfo();?&gt;</code></pre>
+<p>Rendez vous alors sur la page http://localhost/info.php</p>
+<p>La conguration de PHP se fait principalement via le chier php.ini (souvent situé dans le dossier /etc/php/8.1/apache2). Ouvrez ce chier et répondez aux questions suivantes : </p>
+<ol type="1" start="17">
+<li>le mode Safe de PHP est-il activé? </li>
+<li> l&#39;afichage des erreurs est-il activé? (si non, ça peut être une bonne idée de l&#39;activer)</li>
+</ol>
+<p>Note : Si vous modifiez le fichier php.ini, n&#39;oubliez pas de relancer Apache pour que les modications soient prisent en compte</p>
+<p>Créez maintenant un fichier info.php (avec le même contenu que précédemment) dans votre dossier  ~/public_html. Vérifiez que vous pouvez utiliser PHP pour le site Web de votre compte utilisateur.</p>
+<p>Sous Debian et Ubuntu, ce n&#39;est pas toujours le cas par défaut. Il vous faudra alors modifier le fichier /etc/apache2/mods-available/php8.1.conf en suivant les consignes données en commentaire, puis relancer Apache.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation de MySQL" duration="0">
+        <p>Il nous faut encore un système de gestion de bases de données (SGBD) afin de pouvoir stocker les données dynamiques. Nous allons ici installer MySQL. </p>
+<p>Installez le paquet mysql-server. </p>
+<pre><code>sudo apt install mysql-server</code></pre>
+<p>Le fichier de configuration principal de MySQL est /etc/mysql/my.cnf. Ouvrez le et répondez aux questions suivantes : </p>
+<ol type="1" start="19">
+<li>Quel port de votre machine le serveur MySQL utilise-t-il ? </li>
+<li>Dans quel dossier les données seront-elles stockées ? </li>
+<li>Depuis quelles machines a t&#39;on accès au serveur MySQL ?</li>
+</ol>
+<p>Pour vérifier que MySQL est bien installé, lancez (en tant qu&#39;utilisateur normal) la commande </p>
+<pre><code>sudo mysql -u root</code></pre>
+<p>Vous devriez obtenir un nouveau prompt. Essayez alors successivement les commandes suivantes : </p>
+<pre><code>help;
+show databases; 
+use mysql; 
+show tables; 
+select Host,User from user; </code></pre>
+<p>Note : ne pas oublier le &#34; ;&#34; à la fin de chaque commande. </p>
+<ol type="1" start="22">
+<li>Qu&#39;obtenez vous? </li>
+</ol>
+<p>On peut maintenant créer un compte utilisateur grâce à la commande </p>
+<pre><code>CREATE USER ‘toto&#39;@&#39;%&#39; IDENTIFIED BY &#39;motdepasse&#39;;</code></pre>
+<p>Créez ainsi un compte MySQL correspondant à votre compte UNIX. </p>
+<p>Vérifier que la table user de la base de données mysql contient bien une nouvelle entrée. </p>
+<ol type="1" start="23">
+<li>Que signifie &#39;%&#39; dans cette commande? </li>
+</ol>
+<p>Créez une nouvelle base de données appelée test grâce à la commande </p>
+<pre><code>CREATE DATABASE test;</code></pre>
+<p>et donner les droits complets sur cette base de données à votre compte utilisateur via </p>
+<pre><code>GRANT ALL ON test.* TO ‘toto&#39;@&#39;%&#39;</code></pre>
+<p>Quittez MySQL, et reconnecter vous en utilisant cette fois ci votre compte utilisateur grâce à la commande</p>
+<pre><code>mysql -u &lt;login&gt; -p</code></pre>
+<p>Créez la table notes ci-dessous :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\d025c19a0d317ac0.png"></p>
+<p>On utilisera les commandes MySQL CREATE TABLE et INSERT ainsi que SELECT * FROM notes ; pour vérifier que tout est ok.</p>
+<ol type="1" start="24">
+<li>Quelle commande SQL permet de supprimer la première ligne sur Jhon Doe ?</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Accès à la base de données en PHP" duration="0">
+        <p>Vous avez (presque) tout ce qu&#39;il faut pour créer votre site Web dynamique :</p>
+<p>Vérifier dans la sortie de phpinfo() que le support de MySQL est bien installé (il faut pour cela le driver mysql de PDO, cf image ci-dessous) :</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\26912fee3bae939.png"></p>
+<p>Dans le cas contraire, installez le paquet php-mysql puis relancez Apache.</p>
+<p>Écrivez un code PHP qui permet d&#39;ajouter une entrée à la table notes. On vérifiera que les notes sont entre 0 et 20 avant de faire l&#39;ajout.</p>
+<p> Faîtes une page HTML avec un formulaire de façon à pouvoir saisir une nouvelle entrée destinée à la table notes. L&#39;action associée au formulaire sera d&#39;appeler votre code pour la question précédente.</p>
+<p>Rappel : pour faire un formulaire HTML, compléter/adapter le code</p>
+<p class="image-container"><img style="width: 601.70px" src="img\\2ea764bffad3713.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
